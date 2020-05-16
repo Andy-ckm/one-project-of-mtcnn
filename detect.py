@@ -2,8 +2,8 @@ import torch
 from PIL import Image
 from PIL import ImageDraw
 import numpy as np
-from mtcnn_03.tools import utils
-import mtcnn_03.nets as nets
+from tools import utils
+import nets as nets
 from torchvision import transforms
 import time
 import os
