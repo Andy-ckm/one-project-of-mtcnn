@@ -214,3 +214,63 @@ class Detector(object):
             img = img.resize((48, 48))
             #   将图片转成张量
             img_data = self.__image_transform(img)
+            _img_dataset.append(img_data)
+        # 堆叠，相当于数据格式的转换
+        img_dataset = torch.stack(_img_dataset)
+        if self.isCuda:
+            _img_dataset = _img_dataset.cuda()
+        _cls, _offset = self.onet(img_dataset)
+        cls = _cls.cpu().data.numpy()
+        offset = _offset.cpu().data.numpy()
+        #   存放O网络的计算结果
+        boxes = []
+        #   原o_cls为0.97,实际需要达到0.99999
+        idxs, _ = np.where(cls > o_cls)
+        #   根据索引，遍历符合条件的框
+        for idx in idxs:
+            #   以R网络为基准点
+            _box = _rnet_boxes[idx]
+            _x1 = int(_box[0])
+            _y1 = int(_box[1])
+            _x2 = int(_box[2])
+            _y2 = int(_box[3])
+
+            #   框的基准宽和高，框是方的
+            ow = _x2 - _x1
+            oh = _y2 - _y1
+
+            #   O网络最终生成的框的坐标
+            x1 = _x1 + ow * offset[idx][0]
+            y1 = _y1 + oh * offset[idx][1]
+            x2 = _x2 + ow * offset[idx][2]
+            y2 = _y2 + oh * offset[idx][3]
+
+            #   返回四个做i标点和一个置信度
+            #   用最小面积的IOU（原o_nms（IOU）小于0.7的框被保留下来）
+        return utils.nms(np.array(boxes), o_nms, isMin=True)
+
+if __name__ == '__main__':
+    #   多张图片检测
+    image_path = r"test_image"
+    for i in os.listdir(image_path):
+        detector = Detector()
+        with Image.open(os.path.join(image_path, i)) as im:
+            # boxes = detector.detect(im)
+            print("-" * 100)
+            boxes = detector.detect(im)
+            print("size:", im.size)
+            imDraw = ImageDraw.Draw(im)
+            #   多个框，每循环一次框一个人脸
+            for box in boxes:
+                x1 = int(box[0])
+                y1 = int(box[1])
+                x2 = int(box[2])
+                y2 = int(box[3])
+
+                # face_crop = im.crop([x1, y1, x2, y2])
+                print((x1, y1, x2, y2))
+                #   置信度
+                imDraw.rectangle((x1, y1, x2, y2), outline='red')
+            im.show()
+            im.save(str(i)+'.jpg')
+            # exit()
