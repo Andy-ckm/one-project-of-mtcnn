@@ -66,7 +66,7 @@ class Detector(object):
         #   r网络检测----2nd
         start_time = time.time()
         #   传入原图，P网络的一些框，根据这些框在原图上抠图
-        rnet_boxes = self.__image_transform(image)
+        rnet_boxes = self.__rnet_detect(image, pnet_boxes)
         if rnet_boxes.shape[0] == 0:
             return np.array([])
         end_time = time.time()
@@ -75,7 +75,7 @@ class Detector(object):
 
         #   o网络检测----3rd
         start_time = time.time()
-        onet_boxes = self.__image_transform(image)
+        onet_boxes = self.__onet_detect(image, rnet_boxes)
         if onet_boxes.shape[0] == 0:
             return np.array([])
         end_time = time.time()
@@ -199,7 +199,7 @@ class Detector(object):
         return utils.nms(np.array(boxes), r_nms)
 
     #   创建o网络检测函数
-    def __onet(self, image, rnet_boxes):
+    def __onet_detect(self, image, rnet_boxes):
         #   创建空列表，存储R网络的抠图
         _img_dataset = []
         #   将R网络输出的框沿最大的边长扩充成正方形
