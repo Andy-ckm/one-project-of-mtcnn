@@ -144,5 +144,52 @@ class Detector(object):
         #   正式框：返回四个坐标点和一个偏移量
         return [x1, y1, x2, y2]
 
+    #   创建R网络检测函数
+    def __rnet_detect(self, image, pnet_boxes):
+        #   创建空列表，存放抠图
+        _img_dataset = []
+        #   给p网络输出的框找出中心点，沿着最大边长的两边扩充成正方形再抠图
+        _pnet_boxes = utils.convert_to_square(pnet_boxes)
+        #   遍历每个框，每个框返回框四个坐标点，抠图，缩放。数据类型转换，添加列表
+        for _box in _pnet_boxes:
+            _x1 = int(_box[0])
+            _y1 = int(_box[1])
+            _x2 = int(_box[2])
+            _y2 = int(_box[3])
+            #   根据四个点的坐标抠图
+            img = image.crop((_x1, _x2, _y1, _y2))
+            #   缩放固定尺寸
+            img = img.resize((124, 124))
+            #   将图片数组转化为张量
+            img_data = self.__image_transform(img)
+            _img_dataset.append(img_data)
+        #   stack堆叠(默认在0轴)，此处相当数据类型转换
+        img_dataset = torch.stack(_img_dataset)
+        #   加入cuda计算
+        if self.isCuda:
+            img_dataset = img_dataset.cuda()
 
-
+        #   将24 * 24 的图片传入网络再进行一次筛选
+        _cls, _offset = self.rnet(img_dataset)
+        #   将gpu上的数据放在cpu上去，再转成数组numpy
+        cls = _cls.cpu().data.numpy()
+        offset = _offset.cpu().data.numpy()
+        # print("r_cls:", cls.shape)      # (11,1):p网络生成了11个框
+        # print("r_offset", offset)       # (11,4)
+        boxes = []  # R网络要留下来的框，存到boxes里面
+        idxs, _ = np.where(cls > r_cls)     # 原置信度0.6是偏低的
+        #   根据索引，遍历符合条件的框；1轴上的索引恰为符合条件的置信度索引
+        for idx in idxs:
+            _box = _pnet_boxes[idx]
+            _x1 = int(_box[0])
+            _y1 = int(_box[1])
+            _x2 = int(_box[2])
+            _y2 = int(_box[3])
+            #   基准框的宽
+            ow = _x2 - _x1
+            oh = _y2 - _y1
+            #   实际框的坐标点
+            x1 = _x1 + ow * offset[idx][0]
+            y1 = _y1 + oh * offset[idx][1]
+            x2 = _x2 + ow * offset[idx][2]
+            y2 = _y2 + oh * offset[idx][3]
