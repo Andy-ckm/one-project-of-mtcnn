@@ -260,8 +260,17 @@ if __name__ == '__main__':
             boxes = detector.detect(im)
             print("size:", im.size)
             imDraw = ImageDraw.Draw(im)
-            #   人脸计数器
-            a = 0
+
+            #   保存网络输出的人脸（需要调整尺寸），为后面的人脸识别做准备
+            out_put_boxes = utils.convert_to_square(boxes)
+            for _box in out_put_boxes:
+                _x1 = int(_box[0])
+                _y1 = int(_box[1])
+                _x2 = int(_box[2])
+                _y2 = int(_box[3])
+                face_crop = im.crop((_x1, _y1, _x2, _y2))
+                face_crop.save(r"D:\picture\mtcnn\str{0}.jpg".format(_x1))
+
             #   多个框，每循环一次框一个人脸
             for box in boxes:
                 x1 = int(box[0])
@@ -270,19 +279,6 @@ if __name__ == '__main__':
                 y2 = int(box[3])
 
                 # face_crop = im.crop([x1, y1, x2, y2])
-                #   将O网络的输出结果扩充成正方形,为训练人脸特征去提取做准备
-                out_put_boxes = utils.convert_to_square(boxes)
-                #   输出坐标点
-                for _box in out_put_boxes:
-                    _x1 = int(_box[0])
-                    _y1 = int(_box[1])
-                    _x2 = int(_box[2])
-                    _y2 = int(_box[3])
-                    #   根据坐标点抠图（原图）
-                    img_ = im.crop((_x1, _x2, _y1, _y2))
-                    img = img_.resize((122, 122))
-                    #   保存图片
-                    im.save(r"D:\picture\mtcnn\str{0}.jpg".format(a))
 
                 print((x1, y1, x2, y2))
                 #   置信度
