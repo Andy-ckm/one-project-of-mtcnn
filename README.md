@@ -4,8 +4,8 @@
    * win10 + pytorch1.4.0 + Anaconda3(python3.7) + CUDA10.2 + CUDNN7.0
 
    * 关于配置，可以参考以下两篇博客，两位博主写得很详细：
-    * https://blog.csdn.net/weixin_42158966/article/details/88543668
-    * https://blog.csdn.net/qq_37296487/article/details/83028394
+     * https://blog.csdn.net/weixin_42158966/article/details/88543668
+     * https://blog.csdn.net/qq_37296487/article/details/83028394
 
 # 测试结果:
 
@@ -34,3 +34,6 @@
     * run > python train_rnet.py
     * run > python train_onet.py
 
+# 关于依赖库的导入：
+    
+    * run > pip install -r requirements.txt
