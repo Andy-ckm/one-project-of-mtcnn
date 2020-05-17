@@ -197,3 +197,20 @@ class Detector(object):
             boxes.append([x1, y1, x2, y2, cls[idx][0]])
         #   原r_nms为0.5
         return utils.nms(np.array(boxes), r_nms)
+
+    #   创建o网络检测函数
+    def __onet(self, image, rnet_boxes):
+        #   创建空列表，存储R网络的抠图
+        _img_dataset = []
+        #   将R网络输出的框沿最大的边长扩充成正方形
+        _rnet_boxes = utils.convert_to_square(rnet_boxes)
+        for _box in _rnet_boxes:
+            _x1 = int(_box[0])
+            _y1 = int(_box[1])
+            _x2 = int(_box[2])
+            _y2 = int(_box[3])
+            #   根据坐标点“抠图”
+            img = image.crop((_x1, _x2, _y1, _y2))
+            img = img.resize((48, 48))
+            #   将图片转成张量
+            img_data = self.__image_transform(img)
