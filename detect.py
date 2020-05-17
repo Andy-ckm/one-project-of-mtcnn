@@ -195,3 +195,5 @@ class Detector(object):
             y2 = _y2 + oh * offset[idx][3]
             #   返回4个坐标点和置信度
             boxes.append([x1, y1, x2, y2, cls[idx][0]])
+        #   原r_nms为0.5
+        return utils.nms(np.array(boxes), r_nms)
