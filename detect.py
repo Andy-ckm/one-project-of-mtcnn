@@ -269,9 +269,9 @@ if __name__ == '__main__':
                 x2 = int(box[2])
                 y2 = int(box[3])
 
-                face_crop = im.crop([x1, y1, x2, y2])
+                # face_crop = im.crop([x1, y1, x2, y2])
                 #   将O网络的输出结果扩充成正方形,为训练人脸特征去提取做准备
-                out_put_boxes = utils.convert_to_square(face_crop)
+                out_put_boxes = utils.convert_to_square(boxes)
                 #   输出坐标点
                 for _box in out_put_boxes:
                     _x1 = int(_box[0])
