@@ -1,4 +1,9 @@
 # one_project_of_mtcnn
+mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上也可以说是符合了商业
+化的运用。学完mtcnn的原理之后，于是心血来潮，便自己实现了一个。有关于重点代码
+的标注解释，在代码里均有详细的介绍，这样做的目的是为了方便阅读学习，今后修改起
+代码也有所依据。如果对你们有所帮助的话，麻烦点个星，谢谢~ 后续会有陆续更新，包
+括这篇说明文档~
 
 # 运行环境准备：
    * win10 + pytorch1.4.0 + Anaconda3(python3.7) + CUDA10.2 + CUDNN7.0
@@ -25,7 +30,7 @@
   * CelebA数据集：http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html 可以选择官网提供的百度云盘进行下载
   * 下载后在img文件夹解压img_align_celeba_png.7z即可
   * 对应的人脸标签在Anno文件夹下
-  * run > sampling.py 处理好训练需要的数据
+  * run > python sampling.py 处理好训练需要的数据
 
 # 训练:
 
