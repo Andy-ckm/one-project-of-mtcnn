@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader
 import torch.nn as nn
 import torch
 import torch.optim as optim
-from mtcnn_03.sampling import FaceDataset
+from sampling import FaceDataset
 
 
 # 创建训练器
