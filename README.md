@@ -5,6 +5,13 @@ mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上
 代码也有所依据。如果对你们有所帮助的话，麻烦点个星，谢谢~ 后续会有陆续更新，包
 括这篇说明文档~
 
+# 关键技术点
+   * FCN
+   * IOU
+   * MNS
+   * Bounding - Box - regression
+   * PReLu
+   * Soft - NMS 
 # 运行环境准备：
    * win10 + pytorch1.4.0 + Anaconda3(python3.7) + CUDA10.2 + CUDNN7.0
 
