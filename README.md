@@ -43,19 +43,20 @@ mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上
 ![](photo2.jpg.jpg)
 ![](photo3.jpg.jpg)
 ![](photo4.jpg.jpg)
-![](photo5.jpg.jpg)
+![](photo5.jpg.jpg)  
 
+>>>>>>>>>>图片均来源于百度图片，侵删
 
 # 如何使用:
 
-  * run > python detect.py
+  * run > `python detect.py`
 
 # 使用的数据集:
 
   * CelebA数据集：http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html 可以选择官网提供的百度云盘进行下载
   * 下载后在img文件夹解压img_align_celeba_png.7z即可
   * 对应的人脸标签在Anno文件夹下
-  * run > python sampling.py 处理好训练需要的数据
+  * run > `python sampling.py` 处理好训练需要的数据
 
 # 训练:
 
