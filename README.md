@@ -47,15 +47,23 @@
      * https://blog.csdn.net/weixin_42158966/article/details/88543668
      * https://blog.csdn.net/qq_37296487/article/details/83028394
 
-## 测试结果:
-![图片1，亚洲明星脸](photo1.jpg.jpg)
-![图片2，亚洲普通脸](photo2.jpg.jpg)
-![图片3，混合脸](photo3.jpg.jpg)
-![图片4，混合脸](photo4.jpg.jpg)
-![图片5，亚洲女星脸](photo5.jpg.jpg)  
+## 测试结果: 
 <p align="center">
   <a href=""><img src="photo1.jpg.jpg"></a>
 </p>
+<p align="center">
+  <a href=""><img src="photo2.jpg.jpg"></a>
+</p>
+<p align="center">
+  <a href=""><img src="photo3.jpg.jpg"></a>
+</p>
+<p align="center">
+  <a href=""><img src="photo4.jpg.jpg"></a>
+</p>
+<p align="center">
+  <a href=""><img src="photo5.jpg.jpg"></a>
+</p>  
+
 >>>>>>>>>>图片均来源于百度图片，侵删
 
 ## 如何使用:
