@@ -38,12 +38,11 @@ mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上
      * https://blog.csdn.net/qq_37296487/article/details/83028394
 
 # 测试结果:
-
-<div align=center>![](photo1.jpg.jpg)</div>
-![](photo2.jpg.jpg)
-![](photo3.jpg.jpg)
-![](photo4.jpg.jpg)
-![](photo5.jpg.jpg)  
+![图片1，亚洲明星脸](photo1.jpg.jpg)
+![图片2，亚洲普通脸](photo2.jpg.jpg)
+![图片3，混合脸](photo3.jpg.jpg)
+![图片4，混合脸](photo4.jpg.jpg)
+![图片5，亚洲女星脸](photo5.jpg.jpg)  
 
 >>>>>>>>>>图片均来源于百度图片，侵删
 
