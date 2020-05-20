@@ -1,7 +1,6 @@
 # one_project_of_mtcnn
 
 <span align="center">
-![Python Versions][pyversion-button]
 
 [![CircleCI](https://circleci.com/gh/google/pybadges.svg?style=svg)](https://circleci.com/gh/google/pybadges)
 ![pypi](https://img.shields.io/pypi/v/pybadges.svg)
