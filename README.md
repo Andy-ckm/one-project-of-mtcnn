@@ -39,7 +39,7 @@ mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上
 
 # 测试结果:
 
-![](photo1.jpg.jpg)
+<div align=center>![](photo1.jpg.jpg)</div>
 ![](photo2.jpg.jpg)
 ![](photo3.jpg.jpg)
 ![](photo4.jpg.jpg)
