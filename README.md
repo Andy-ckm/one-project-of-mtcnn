@@ -47,7 +47,7 @@
      * https://blog.csdn.net/weixin_42158966/article/details/88543668
      * https://blog.csdn.net/qq_37296487/article/details/83028394
 
-## 测试结果: 
+<p align="center"> ## 测试结果: </p>
 <p align="center">
   <a href=""><img src="photo1.jpg.jpg"></a>
 </p>
