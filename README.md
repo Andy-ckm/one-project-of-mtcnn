@@ -61,9 +61,9 @@ mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上
 # 训练:
 
   * 准备好p网络需要的数据（12 * 12 的图片）
-    * run > python train_pnet.py
-    * run > python train_rnet.py
-    * run > python train_onet.py
+    * run > `python train_pnet.py`
+    * run > `python train_rnet.py`
+    * run > `python train_onet.py`
 
 # 关于依赖库的导入：
     
