@@ -2,9 +2,10 @@
   <a href=""><img src="head_pic.jpg"></a>
 </p>
 
-<font color=red size=42> one_project_of_mtcnn </font>
 
 <span align="center">
+
+#### one_project_of_mtcnn
 
 [![CircleCI](https://circleci.com/gh/google/pybadges.svg?style=svg)](https://circleci.com/gh/google/pybadges)
 ![pypi](https://img.shields.io/pypi/v/pybadges.svg)
