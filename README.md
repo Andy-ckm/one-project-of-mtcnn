@@ -9,12 +9,12 @@
 [![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 
 </span>
-:earth_americas: mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上也可以说是符合了商业
+:herb: mtcnn侦测网络对小目标的精准检测是有目共睹，并且在速度上也可以说是符合了商业
 化的运用。学完mtcnn的原理之后，于是心血来潮，便自己实现了一个。有关于重点代码
 的标注解释，在代码里均有详细的介绍，这样做的目的是为了方便阅读学习，今后修改起
 代码也有所依据。  
-:frog :如果本项目对你们有所帮助或启发的话，麻烦点个星，谢谢~  
-:frog :后续会有陆续更新，包括这篇说明文档~
+:four_leaf_clover: 如果本项目对你们有所帮助或启发的话，麻烦点个星，谢谢~  
+:maple_leaf: 后续会有陆续更新，包括这篇说明文档~
 
 ## 关键技术点：
    * FCN  
