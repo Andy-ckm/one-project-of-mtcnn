@@ -38,7 +38,7 @@ class Detector(object):
             self.onet.cuda()
         #   把训练好的权重加载到p网络中
         self.pnet.load_state_dict(torch.load(pnet_param))
-        self.rnet.load_state_dict(torch.load(onet_param))
+        self.rnet.load_state_dict(torch.load(rnet_param))
         self.onet.load_state_dict(torch.load(onet_param))
         #   调用测试模式，因为网络中含有BN
         self.pnet.eval()
