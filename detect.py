@@ -165,7 +165,7 @@ class Detector(object):
             #   根据四个点的坐标抠图
             img = image.crop((_x1, _x2, _y1, _y2))
             #   缩放固定尺寸
-            img = img.resize((124, 124))
+            img = img.resize((24, 24))
             #   将图片数组转化为张量
             img_data = self.__image_transform(img)
             _img_dataset.append(img_data)
