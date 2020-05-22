@@ -148,7 +148,7 @@ class Detector(object):
         x2 = _x2 + ow * _offset[2]
         y2 = _y2 + oh * _offset[3]
         #   正式框：返回四个坐标点和一个偏移量
-        return [x1, y1, x2, y2]
+        return [x1, y1, x2, y2, cls]
 
     #   创建R网络检测函数
     def __rnet_detect(self, image, pnet_boxes):
