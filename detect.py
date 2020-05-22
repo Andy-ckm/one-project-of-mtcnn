@@ -78,8 +78,13 @@ class Detector(object):
         onet_boxes = self.__onet_detect(image, rnet_boxes)
         if onet_boxes.shape[0] == 0:
             return np.array([])
-        end_time = time.time()
+        t_onet = time.time()
 
+        t_sum = t_pnet + t_rnet + t_onet
+
+        print("total:{0} pnet:{1} rnet:{2} onet:{3}".format(t_sum, t_pnet, t_rnet, t_onet))
+
+        return onet_boxes
     #   创建p网络检测器
     def __pnet_detect(self, image):
         #   p网络全部是卷积(FCN)，与输入图片大小无关
