@@ -251,6 +251,8 @@ class Detector(object):
             x2 = _x2 + ow * offset[idx][2]
             y2 = _y2 + oh * offset[idx][3]
 
+            boxes.append([x1, y1, x2, y2, cls[idx][0]])
+
             #   返回四个做i标点和一个置信度
             #   用最小面积的IOU（原o_nms（IOU）小于0.7的框被保留下来）
         return utils.nms(np.array(boxes), o_nms, isMin=True)
