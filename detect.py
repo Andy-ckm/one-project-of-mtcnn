@@ -127,7 +127,7 @@ class Detector(object):
             #   重新获取最小的宽和高
             min_side_len = min(_w, _h)
 
-            return utils.nms(np.array(boxes), p_nms)
+        return utils.nms(np.array(boxes), p_nms)
 
     #   特征反算：将回归量还原到原图上去，根据特征图反算到原图的建议框
     def __box(self, start_index, offset, cls, scale, stride=2, side_len=12):
