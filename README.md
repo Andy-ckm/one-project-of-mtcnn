@@ -60,6 +60,10 @@
       <p align="left">
   <a href=""><img src="other_pics/cross.png"></a>
       </p>
+   * 回归框的损失：  
+      <p align="left">
+  <a href=""><img src="other_pics/bounding.png"></a>
+      </p>
 ## 关键技术点：
    * FCN  
       在P网络采用全卷积(FCN)的设计是因为，P网络接收的是不固定大小的数据；此处的每个像素点，
