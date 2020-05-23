@@ -89,11 +89,13 @@
 
 ## 训练:
 
-  * 准备好p网络需要的数据（12 * 12 的图片）
+  * 分别准备好p,r,o网络需要的数据（12 * 12，24 * 24， 48 * 48的图片）
     * run > `python train_pnet.py`
     * run > `python train_rnet.py`
     * run > `python train_onet.py`
-
+  * 训练时间
+    * 硬件设备：固态硬盘 + GTX1660 6GB
+    * 耗时:4小时6分钟
 ## 关于依赖库的导入：
     
     * run > pip install -r requirements.txt
