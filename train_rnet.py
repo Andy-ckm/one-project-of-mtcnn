@@ -1,7 +1,7 @@
 #   训练R网络
 
-import mtcnn_03.nets as nets
-import mtcnn_03.train as train
+import nets as nets
+import train as train
 
 if __name__ == '__main__':
     net = nets.RNet()
