@@ -57,7 +57,9 @@
      核的大小。
 ## 损失函数：
    * 置信度损失（交叉熵）：  
-      $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text {，独立公式示例} $$
+      <p align="left">
+  <a href=""><img src="other_pic/cross.png"></a>
+      </p>
 ## 关键技术点：
    * FCN  
       在P网络采用全卷积(FCN)的设计是因为，P网络接收的是不固定大小的数据；此处的每个像素点，
