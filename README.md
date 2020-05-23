@@ -60,7 +60,7 @@
       <p align="left">
   <a href=""><img src="other_pics/cross.png"></a>
       </p>
-   * 回归框的损失：  
+   * 回归框的损失（平方差损失）：  
       <p align="left">
   <a href=""><img src="other_pics/bounding.png"></a>
       </p>
