@@ -96,6 +96,7 @@
   * 训练时间
     * 硬件设备：固态硬盘 + GTX1660 6GB
     * 耗时:4小时6分钟
+    
 ## 关于依赖库的导入：
     
     * run > pip install -r requirements.txt
