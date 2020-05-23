@@ -58,7 +58,7 @@
 ## 损失函数：
    * 置信度损失（交叉熵）：  
       <p align="left">
-  <a href=""><img src="other_pic/cross.png"></a>
+  <a href=""><img src="other_pics/cross.png"></a>
       </p>
 ## 关键技术点：
    * FCN  
