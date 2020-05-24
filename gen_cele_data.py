@@ -55,7 +55,7 @@ for face_size in [12, 24, 48]:
         negative_anno_file = open(negative_anno_filename, "w")
         part_anno_file = open(part_anno_filename, "w")
 
-        #   枚举出所信息
+        #   枚举出所有的信息
         for i, line in enumerate(open(anno_src)):
             # 避开开头两行的文件
             if i < 2:
