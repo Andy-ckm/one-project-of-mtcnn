@@ -25,7 +25,7 @@ for face_size in [12, 24, 48]:
 
     #   %i:十进制占位符
     print("gen %i image" % face_size)
-    #
+
     #   "样本图片"储存路径--image
     #   创建三级文件路径
     positive_image_dir = os.path.join(save_path, str(face_size), "positive")
