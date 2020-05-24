@@ -11,7 +11,7 @@ from sampling import FaceDataset
 
 # 创建训练器
 class Trainer(object):
-    def __init__(self, net, save_path, dataset_path, isCuda):
+    def __init__(self, net, save_path, dataset_path, isCuda=True):
         self.net = net
         self.save_path = save_path
         self.dataset_path = dataset_path
